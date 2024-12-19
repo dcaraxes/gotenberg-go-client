@@ -121,6 +121,12 @@ func (req *chromiumRequest) SkipNetworkIdleEvent() {
 	req.fields[fieldChromiumSkipNetworkIdleEvent] = strconv.FormatBool(true)
 }
 
+// SetSkipNetworkIdleEvent sets the SkipNetworkIdleEvent form field.
+// Enabled by default in Gotenberg >= 8.11.0.
+func (req *chromiumRequest) SetSkipNetworkIdleEvent(val bool) {
+	req.fields[fieldChromiumSkipNetworkIdleEvent] = strconv.FormatBool(val)
+}
+
 // SinglePage defines whether to print the entire content in one single page.
 func (req *chromiumRequest) SinglePage() {
 	req.fields[fieldChromiumSinglePage] = strconv.FormatBool(true)
